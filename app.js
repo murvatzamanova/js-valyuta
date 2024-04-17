@@ -1,13 +1,22 @@
+        function convertCurrency() {
+            var amount = document.getElementById('amount').value;
+            var fromCurrency = document.getElementById('fromCurrency').value;
+            var toCurrency = document.getElementById('toCurrency').value;
 
-const aznToUsd = 0.589; // 1 AZN = 0.589 USD
-const aznToEur = 0.501; // 1 AZN = 0.501 EUR
-
-function convertCurrency(amountInAZN) {
-    const amountInUSD = amountInAZN * aznToUsd;
-    const amountInEUR = amountInAZN * aznToEur;
-    return { USD: amountInUSD, EUR: amountInEUR };
-}
-let amountInAZN = prompt("Eded daxil ed")
-console.log(amountInAZN + ' AZN = ' + convertedAmounts.USD.toFixed(2) + ' USD');
-console.log(amountInAZN + ' AZN = ' + convertedAmounts.EUR.toFixed(2) + ' EUR');
-
+            var usdToTry = 8.50;
+            var eurToTry = 10.20;
+            var usdToEur = 0.85;
+            
+            var result;
+            if (fromCurrency === "USD" && toCurrency === "TRY") {
+                result = amount * usdToTry;
+            } else if (fromCurrency === "EUR" && toCurrency === "TRY") {
+                result = amount * eurToTry;
+            } else if (fromCurrency === "USD" && toCurrency === "EUR") {
+                result = amount * usdToEur;
+            } else {
+                result = "Geçersiz dönüşüm!";
+            }
+            
+            document.getElementById('result').innerText = amount + ' ' + fromCurrency + ' = ' + result + ' ' + toCurrency;
+        }
