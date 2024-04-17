@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Çevirici</title>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
 
+</head>
 <body>
     <script src="app.js"></script>
-</body>
+    <h2>Valyuta cevirici</h2>
+    <form id="currencyConverter">
+        <label for="amount">Miqdar:</label>
+        <input type="number" id="amount" placeholder="Miqdari yaz" required><br><br>
+        
+        <label for="fromCurrency"></label>
+        <select id="fromCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="TRY">TRY</option>
 
+        </select><br><br>
+        
+        <label for="toCurrency">Miqdari:</label>
+        <select id="toCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="TRY">TRY</option>
+
+        </select><br><br>
+        
+        <button type="button" onclick="convertCurrency()">Cevir</button>
+    </form>
+    
+    <h2>Netice:</h2>
+    <div id="result"></div>
+    </body>
 </html>
